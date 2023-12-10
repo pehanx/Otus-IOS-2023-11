@@ -11,6 +11,11 @@
 		1156C3002B25A09B0077A812 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C2FF2B25A09B0077A812 /* ContentView.swift */; };
 		1156C3022B25A09D0077A812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156C3012B25A09D0077A812 /* Assets.xcassets */; };
 		1156C3052B25A09D0077A812 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156C3042B25A09D0077A812 /* Preview Assets.xcassets */; };
+		1156C30F2B25A2A20077A812 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C30E2B25A2A20077A812 /* ThirdView.swift */; };
+		1156C3112B25A2AF0077A812 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C3102B25A2AF0077A812 /* SecondView.swift */; };
+		1156C3132B25A2B30077A812 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C3122B25A2B30077A812 /* FirstView.swift */; };
+		1156C3152B25A5750077A812 /* ThirdSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C3142B25A5750077A812 /* ThirdSubview.swift */; };
+		1156C3182B25AAA70077A812 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C3172B25AAA70077A812 /* MainButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		1156C2FF2B25A09B0077A812 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1156C3012B25A09D0077A812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1156C3042B25A09D0077A812 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1156C30E2B25A2A20077A812 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
+		1156C3102B25A2AF0077A812 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		1156C3122B25A2B30077A812 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		1156C3142B25A5750077A812 /* ThirdSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdSubview.swift; sourceTree = "<group>"; };
+		1156C3172B25AAA70077A812 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,8 @@
 		1156C2FC2B25A09B0077A812 /* OTUS */ = {
 			isa = PBXGroup;
 			children = (
+				1156C3162B25AA6C0077A812 /* Views */,
+				1156C30B2B25A2650077A812 /* Screens */,
 				1156C2FD2B25A09B0077A812 /* OTUSApp.swift */,
 				1156C2FF2B25A09B0077A812 /* ContentView.swift */,
 				1156C3012B25A09D0077A812 /* Assets.xcassets */,
@@ -65,6 +77,25 @@
 				1156C3042B25A09D0077A812 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1156C30B2B25A2650077A812 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1156C30E2B25A2A20077A812 /* ThirdView.swift */,
+				1156C3102B25A2AF0077A812 /* SecondView.swift */,
+				1156C3122B25A2B30077A812 /* FirstView.swift */,
+				1156C3142B25A5750077A812 /* ThirdSubview.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1156C3162B25AA6C0077A812 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1156C3172B25AAA70077A812 /* MainButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1156C30F2B25A2A20077A812 /* ThirdView.swift in Sources */,
+				1156C3132B25A2B30077A812 /* FirstView.swift in Sources */,
+				1156C3182B25AAA70077A812 /* MainButton.swift in Sources */,
 				1156C3002B25A09B0077A812 /* ContentView.swift in Sources */,
+				1156C3152B25A5750077A812 /* ThirdSubview.swift in Sources */,
+				1156C3112B25A2AF0077A812 /* SecondView.swift in Sources */,
 				1156C2FE2B25A09B0077A812 /* OTUSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@ import SwiftUI
 import CustomNavigationStack
 
 struct ContentView: View {
+    let viewModel = NavigationViewModel()
     var body: some View {
         CustomNavigationView(viewModel: viewModel,
                              transition: (push: .scale, pop: .opacity)) {

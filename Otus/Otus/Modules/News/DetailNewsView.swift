@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CustomNavigationStack
+import OtusUI
 
 struct DetailNewsView: View {
     @EnvironmentObject var viewModel: NavigationViewModel
@@ -21,7 +22,9 @@ struct DetailNewsView: View {
     
     var body: some View {
         VStack {
-            NavigationBack()
+            NavigationBack {
+                viewModel.pop()
+            }
             VStack(alignment: .leading, spacing: 8) {
                 Image(uiImage: image)
                     .resizable()

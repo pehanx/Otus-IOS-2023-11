@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OtusNetworkingCore
 
 class ArtworksViewModel: ObservableObject {
     @Published var currentPage:Int = 1
@@ -28,7 +29,7 @@ class ArtworksViewModel: ObservableObject {
     }
     
     private func fetchArtworks() {
-        NetworkManager.shared.getArtworks(page: currentPage) { [weak self] result in
+        getArtworks(page: currentPage) { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success(let response):
@@ -43,7 +44,7 @@ class ArtworksViewModel: ObservableObject {
     func loadMore() {
         isLoading = true
         currentPage += 1
-        NetworkManager.shared.getArtworks(page: currentPage) { [weak self] result in
+        getArtworks(page: currentPage) { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success(let response):
@@ -52,5 +53,10 @@ class ArtworksViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    private func getArtworks(page:Int, completion: @escaping (Result<ArtworksResponse, Error>) -> Void) {
+        let url = "https://api.artic.edu/api/v1/artworks?limit=10&page=\(page)"
+        NetworkManager.shared.baseGetRequest(urlString: url, completion: completion)
     }
 }

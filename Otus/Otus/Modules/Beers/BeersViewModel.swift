@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OtusNetworkingCore
 
 class BeersViewModel: ObservableObject {
     @Published var currentPage:Int = 1
@@ -26,7 +27,7 @@ class BeersViewModel: ObservableObject {
     }
     
     private func fetchBeers() {
-        NetworkManager.shared.getBeers(page: currentPage) { [weak self] result in
+        getBeers(page: currentPage) { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success(let response):
@@ -40,7 +41,7 @@ class BeersViewModel: ObservableObject {
     func loadMore() {
         isLoading = true
         currentPage += 1
-        NetworkManager.shared.getBeers(page: currentPage) { [weak self] result in
+        getBeers(page: currentPage) { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success(let response):
@@ -49,5 +50,10 @@ class BeersViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func getBeers(page:Int, completion: @escaping (Result<BeersResponse, Error>) -> Void) {
+        let url = "https://api.punkapi.com/v2/beers?page=\(page)&per_page=10"
+        NetworkManager.shared.baseGetRequest(urlString: url, completion: completion)
     }
 }

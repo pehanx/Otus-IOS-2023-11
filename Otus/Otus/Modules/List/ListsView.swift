@@ -11,9 +11,6 @@ import CustomNavigationStack
 struct ListsView: View {
     @EnvironmentObject var viewModel: NavigationViewModel
     @ObservedObject var listsViewModel = ListsViewModel()
-    @ObservedObject var artworksViewModel = ArtworksViewModel()
-    @ObservedObject var newsViewModel = NewsViewModel()
-    @ObservedObject var beersViewModel = BeersViewModel()
     private var types = ListsType.allCases
     
     var body: some View {
@@ -27,11 +24,11 @@ struct ListsView: View {
             
             switch listsViewModel.selectedType {
             case .artworks:
-                ArtworksView(viewModel: artworksViewModel)
+                ArtworksView(viewModel: listsViewModel.artworksViewModel)
             case .news:
-                NewsView(viewModel: newsViewModel)
+                NewsView(viewModel: listsViewModel.newsViewModel)
             case .beers:
-                BeersView(viewModel: beersViewModel)
+                BeersView(viewModel: listsViewModel.beersViewModel)
             }
         }
     }

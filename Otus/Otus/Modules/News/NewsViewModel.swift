@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OtusNetworkingCore
 
 class NewsViewModel: ObservableObject {
     @Published var currentPage:Int = 1
@@ -29,7 +30,7 @@ class NewsViewModel: ObservableObject {
     }
     
     private func fetchNews() {
-        NetworkManager.shared.getNews(page: currentPage, from: fromDate) { [weak self] result in
+        getNews(page: currentPage, from: fromDate) { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success(let response):
@@ -44,7 +45,7 @@ class NewsViewModel: ObservableObject {
     func loadMore() {
         isLoading = true
         currentPage += 1
-        NetworkManager.shared.getNews(page: currentPage, from: fromDate) { [weak self] result in
+        getNews(page: currentPage, from: fromDate) { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success(let response):
@@ -62,5 +63,10 @@ class NewsViewModel: ObservableObject {
             return dateFormatter.string(from: date)
         }
         return dateFormatter.string(from: Date())
+    }
+    
+    func getNews(page:Int, from: String, completion: @escaping (Result<NewsResponse, Error>) -> Void) {
+        let url = "https://newsapi.org/v2/everything?q=tesla&from=\(from)&sortBy=publishedAt&apiKey=ea7168fe47b7485d90047b96ac1bf7a8&pageSize=10&page=\(page)"
+        NetworkManager.shared.baseGetRequest(urlString: url, completion: completion)
     }
 }

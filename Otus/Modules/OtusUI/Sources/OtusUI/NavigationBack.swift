@@ -1,20 +1,22 @@
 //
 //  NavigationBack.swift
-//  Otus
 //
-//  Created by Nikita Spekhin on 11.02.2024.
+//
+//  Created by Nikita Spekhin on 21.02.2024.
 //
 
 import SwiftUI
-import CustomNavigationStack
 
-struct NavigationBack: View {
-    @EnvironmentObject var viewModel: NavigationViewModel
-    var body: some View {
+public struct NavigationBack: View {
+    public var action: (() -> Void)
+    public init(action: @escaping () -> Void) {
+        self.action = action
+    }
+    public var body: some View {
         VStack {
             HStack {
                 Button(action: {
-                    viewModel.pop()
+                    action()
                 }, label: {
                     Text("Back")
                 })
@@ -24,8 +26,4 @@ struct NavigationBack: View {
                 .frame(height: 24)
         }
     }
-}
-
-#Preview {
-    NavigationBack()
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CustomNavigationStack
+import OtusUI
 
 struct DetailArtworksView: View {
     @EnvironmentObject var viewModel: NavigationViewModel
@@ -18,7 +19,9 @@ struct DetailArtworksView: View {
     
     var body: some View {
         VStack {
-            NavigationBack()
+            NavigationBack {
+                viewModel.pop()
+            }
             VStack(alignment: .leading, spacing: 8) {
                 Text(artwork.title)
                     .font(.headline)

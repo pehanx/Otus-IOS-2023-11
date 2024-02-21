@@ -39,7 +39,5 @@ struct DetailBeersView: View {
             }.padding(.horizontal, 16)
             Spacer()
         }
-        
     }
 }
-

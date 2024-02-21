@@ -27,11 +27,12 @@ struct DetailArtworksView: View {
                     .font(.headline)
                 Text("Artist - " + artwork.artistDisplay)
                     .font(.subheadline)
-                Text("Place - " + artwork.placeOfOrigin)
-                    .font(.callout)
+                if let placeOfOrigin = artwork.placeOfOrigin {
+                    Text("Place - " + placeOfOrigin)
+                        .font(.callout)
+                }
             }.padding(.horizontal, 16)
             Spacer()
         }
-        
     }
 }

@@ -19,6 +19,11 @@ public final class NetworkManager {
                 return
             }
             
+            if let result = data {
+                let json = NSString(data: result, encoding: String.Encoding.utf8.rawValue)
+                print("JSON: json - ", json)
+            }
+            
             do {
                 let objects = try JSONDecoder().decode(T.self, from: data!)
                 

@@ -23,7 +23,7 @@ class NewsViewModel: ObservableObject {
     func isCanLoadMore(for item: Article) -> Bool {
         guard
             !isLoading,
-            let newsResponse = newsResponse,
+            newsResponse != nil,
             articles.isLastItem(item)
         else { return false }
         return true

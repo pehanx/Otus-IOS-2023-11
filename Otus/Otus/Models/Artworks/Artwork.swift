@@ -10,11 +10,11 @@ import Foundation
 struct Artwork: Identifiable, Codable {
     let id: Int
     let title: String
-    let thumbnail: ArtworkThumbnail
+    let thumbnail: ArtworkThumbnail?
     let mainReferenceNumber: String
     let dateDisplay: String
 	let artistDisplay: String
-    let placeOfOrigin: String
+    let placeOfOrigin: String?
 
     enum CodingKeys: String, CodingKey {
         case id

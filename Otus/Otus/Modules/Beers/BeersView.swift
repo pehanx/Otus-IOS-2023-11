@@ -11,6 +11,7 @@ import CustomNavigationStack
 struct BeersView: View {
     @EnvironmentObject var navigationViewModel: NavigationViewModel
     @ObservedObject var viewModel:BeersViewModel
+    
     var body: some View {
         List(viewModel.beers) { beer in
             VStack(alignment: .leading) {

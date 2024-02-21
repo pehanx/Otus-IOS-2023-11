@@ -21,7 +21,6 @@ struct ListsView: View {
                 }
             }, label: {})
             .pickerStyle(.segmented)
-            
             switch listsViewModel.selectedType {
             case .artworks:
                 ArtworksView(viewModel: listsViewModel.artworksViewModel)

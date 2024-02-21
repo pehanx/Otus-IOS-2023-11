@@ -14,7 +14,7 @@ struct Beer: Identifiable, Codable {
     let name: String
     let description: String
     let imageURL: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name

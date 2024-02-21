@@ -39,7 +39,5 @@ struct DetailNewsView: View {
             }.padding(.horizontal, 16)
             Spacer()
         }
-        
     }
 }
-

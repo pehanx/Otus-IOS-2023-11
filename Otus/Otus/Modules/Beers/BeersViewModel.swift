@@ -8,34 +8,24 @@
 import SwiftUI
 import OtusNetworkingCore
 
-class BeersViewModel: ObservableObject {
-    @Published var currentPage:Int = 1
-    @Published var beers = [Beer]()
+class BeersViewModel: ObservableObject, BaseViewModelProtocol {
+    typealias Item = Beer
+    @Injected var network: NetworkService?
+    @Published var currentPage: Int = 1
+    @Published var items: [Beer] = []
     @State var isLoading: Bool = false
     
     init() {
         isLoading = true
-        fetchBeers()
+        fetchItems()
     }
     
     func isCanLoadMore(for item: Beer) -> Bool {
         guard
             !isLoading,
-            beers.isLastItem(item)
+            items.isLastItem(item)
         else { return false }
         return true
-    }
-    
-    private func fetchBeers() {
-        getBeers(page: currentPage) { [weak self] result in
-            self?.isLoading = false
-            switch result {
-            case .success(let response):
-                self?.beers = response
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
     
     func loadMore() {
@@ -45,7 +35,19 @@ class BeersViewModel: ObservableObject {
             self?.isLoading = false
             switch result {
             case .success(let response):
-                self?.beers.append(contentsOf: response)
+                self?.items.append(contentsOf: response)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func fetchItems() {
+        getBeers(page: currentPage) { [weak self] result in
+            self?.isLoading = false
+            switch result {
+            case .success(let response):
+                self?.items = response
             case .failure(let error):
                 print(error)
             }
@@ -54,6 +56,6 @@ class BeersViewModel: ObservableObject {
     
     func getBeers(page:Int, completion: @escaping (Result<BeersResponse, Error>) -> Void) {
         let url = "https://api.punkapi.com/v2/beers?page=\(page)&per_page=10"
-        NetworkManager.shared.baseGetRequest(urlString: url, completion: completion)
+        network?.baseGetRequest(urlString: url, completion: completion)
     }
 }

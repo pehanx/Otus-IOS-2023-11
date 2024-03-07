@@ -12,7 +12,7 @@ struct NewsView: View {
     @EnvironmentObject var navigationViewModel: NavigationViewModel
     @ObservedObject var viewModel:NewsViewModel
     var body: some View {
-        List(viewModel.articles) { article in
+        List(viewModel.items) { article in
             VStack(alignment: .leading) {
                 Text(article.title)
             }

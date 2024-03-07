@@ -13,7 +13,7 @@ struct BeersView: View {
     @ObservedObject var viewModel:BeersViewModel
     
     var body: some View {
-        List(viewModel.beers) { beer in
+        List(viewModel.items) { beer in
             VStack(alignment: .leading) {
                 Text(beer.name)
             }

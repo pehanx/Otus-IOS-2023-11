@@ -10,6 +10,10 @@
 		11304EB82B86679000F12C66 /* CustomNavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = 11304EB72B86679000F12C66 /* CustomNavigationStack */; };
 		11304EBB2B8668D500F12C66 /* OtusUI in Frameworks */ = {isa = PBXBuildFile; productRef = 11304EBA2B8668D500F12C66 /* OtusUI */; };
 		11304EBE2B866DA700F12C66 /* OtusNetworkingCore in Frameworks */ = {isa = PBXBuildFile; productRef = 11304EBD2B866DA700F12C66 /* OtusNetworkingCore */; };
+		114D60FA2B99F38700BB0153 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D60F92B99F38700BB0153 /* ServiceLocator.swift */; };
+		114D60FC2B99F3EA00BB0153 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D60FB2B99F3EA00BB0153 /* Configurator.swift */; };
+		114D60FE2B99F4B000BB0153 /* InjectedWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D60FD2B99F4B000BB0153 /* InjectedWrapper.swift */; };
+		114D61012B99F5CD00BB0153 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D61002B99F5CD00BB0153 /* BaseViewModel.swift */; };
 		1163609F2B78A24C000F7B37 /* DetailNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163609E2B78A24C000F7B37 /* DetailNewsView.swift */; };
 		116360A22B78A2F6000F7B37 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116360A12B78A2F6000F7B37 /* ImageLoader.swift */; };
 		116360A42B78A31B000F7B37 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116360A32B78A31B000F7B37 /* ImageView.swift */; };
@@ -41,6 +45,10 @@
 		11304EB62B86677A00F12C66 /* CustomNavigationStack */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CustomNavigationStack; path = Modules/CustomNavigationStack; sourceTree = "<group>"; };
 		11304EB92B8668D000F12C66 /* OtusUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = OtusUI; path = Modules/OtusUI; sourceTree = "<group>"; };
 		11304EBC2B866DA300F12C66 /* OtusNetworkingCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = OtusNetworkingCore; path = Modules/OtusNetworkingCore; sourceTree = "<group>"; };
+		114D60F92B99F38700BB0153 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		114D60FB2B99F3EA00BB0153 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		114D60FD2B99F4B000BB0153 /* InjectedWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectedWrapper.swift; sourceTree = "<group>"; };
+		114D61002B99F5CD00BB0153 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		1163609E2B78A24C000F7B37 /* DetailNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewsView.swift; sourceTree = "<group>"; };
 		116360A12B78A2F6000F7B37 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		116360A32B78A31B000F7B37 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -83,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		114D60FF2B99F4B200BB0153 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				114D60F92B99F38700BB0153 /* ServiceLocator.swift */,
+				114D60FB2B99F3EA00BB0153 /* Configurator.swift */,
+				114D60FD2B99F4B000BB0153 /* InjectedWrapper.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		116360A02B78A2F1000F7B37 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +130,7 @@
 		11DDA51E2B74806900955A8C /* Otus */ = {
 			isa = PBXGroup;
 			children = (
+				114D60FF2B99F4B200BB0153 /* DI */,
 				116360A02B78A2F1000F7B37 /* Helpers */,
 				11DDA5722B74E5C300955A8C /* Modules */,
 				11DDA56A2B74E36500955A8C /* Extensions */,
@@ -196,6 +215,7 @@
 				11DDA57F2B750D4400955A8C /* Beers */,
 				11DDA57A2B74E73500955A8C /* News */,
 				11DDA5732B74E5C800955A8C /* Artwokrs */,
+				114D61002B99F5CD00BB0153 /* BaseViewModel.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -316,7 +336,9 @@
 				11DDA5712B74E56D00955A8C /* Article.swift in Sources */,
 				11DDA5842B75190800955A8C /* BeersView.swift in Sources */,
 				11DDA5812B75186A00955A8C /* BeersResponse.swift in Sources */,
+				114D60FC2B99F3EA00BB0153 /* Configurator.swift in Sources */,
 				11DDA5792B74E60200955A8C /* ArtworksViewModel.swift in Sources */,
+				114D61012B99F5CD00BB0153 /* BaseViewModel.swift in Sources */,
 				11DDA5222B74806900955A8C /* ContentView.swift in Sources */,
 				11DDA57E2B74E74000955A8C /* NewsViewModel.swift in Sources */,
 				11DDA5862B75190E00955A8C /* BeersViewModel.swift in Sources */,
@@ -325,6 +347,8 @@
 				116360A42B78A31B000F7B37 /* ImageView.swift in Sources */,
 				11DDA56C2B74E36900955A8C /* RandomAccessCollection+Extensions.swift in Sources */,
 				11DDA55A2B748C9700955A8C /* ListsView.swift in Sources */,
+				114D60FE2B99F4B000BB0153 /* InjectedWrapper.swift in Sources */,
+				114D60FA2B99F38700BB0153 /* ServiceLocator.swift in Sources */,
 				116360A82B78A5F2000F7B37 /* DetailBeersView.swift in Sources */,
 				116360A62B78A3AF000F7B37 /* ListsViewModel.swift in Sources */,
 				1163609F2B78A24C000F7B37 /* DetailNewsView.swift in Sources */,

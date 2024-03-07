@@ -7,9 +7,8 @@
 
 import Foundation
 
-public final class NetworkManager {
-    public static let shared = NetworkManager()
-    private init(){}
+public final class NetworkService {
+    public init(){}
     
     public func baseGetRequest<T: Decodable>(urlString: String, completion: @escaping (Result<T, Error>) -> Void){
         guard let url = URL(string: urlString) else { return }

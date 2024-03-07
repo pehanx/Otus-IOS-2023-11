@@ -13,7 +13,7 @@ struct ArtworksView: View {
     @ObservedObject var viewModel: ArtworksViewModel
     
     var body: some View {
-        List(viewModel.artworks) { artwork in
+        List(viewModel.items) { artwork in
             VStack(alignment: .leading) {
                 Text(artwork.title)
             }
